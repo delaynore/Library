@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Летняя_Практика_ООП_2_Курс"
         mc:Ignorable="d"
-        Title="Регистрация" Height="270" Width="250" ResizeMode="CanMinimize">
+        Title="Регистрация" Height="270" Width="250" ResizeMode="CanMinimize" FontSize="14" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Margin="15,40,0,0" VerticalAlignment="Top" Width="200" Height="25" MaxLength="30" Cursor="IBeam"/>
-        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Margin="15,100,0,0" VerticalAlignment="Top" Width="200" Height="25" PasswordChar="*" 
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Имя пользователя" FontWeight="Black" Margin="5"/>
+            <TextBox x:Name="NameTextBox" Width="200" Height="25" MaxLength="30" Cursor="IBeam"/>
+            <TextBlock Text="Пароль" FontWeight="Black" Margin="5"/>
+            <PasswordBox x:Name="PasswordTextBox" Width="200" Height="25"  
                      MaxLength="20" Cursor="IBeam"/>
-        <PasswordBox x:Name="PasswordTextBoxSecond" HorizontalAlignment="Left" Margin="15,160,0,0" VerticalAlignment="Top" Width="200" Height="25" PasswordChar="*"
+            <TextBlock Text="Повторите пароль" FontWeight="Black"  Margin="5"/>
+            <PasswordBox x:Name="PasswordTextBoxSecond" Width="200" Height="25"
                      MaxLength="20" Cursor="IBeam"/>
-        <TextBlock Text="Введите имя пользователя" HorizontalAlignment="Left" Margin="15,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-                   FontSize="14" FontWeight="Black" Width="370"/>
-        <TextBlock Text="Введите пароль" HorizontalAlignment="Left" Margin="15,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontSize="14" FontWeight="Black" Width="370"/>
-        <TextBlock Text="Повторите пароль" HorizontalAlignment="Left" Margin="15,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontSize="14" FontWeight="Black" Width="370"/>
-        <Button Content="Зарегистрироваться" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Width="120" Margin="0,0,0,10" Cursor="Hand" Click="Button_Click"/>
+            <Button Content="Зарегистрироваться" Height="25" Cursor="Hand" Click="Button_Click" Margin="5"/>
+        </StackPanel>
+        
+        
     </Grid>
 </Window>

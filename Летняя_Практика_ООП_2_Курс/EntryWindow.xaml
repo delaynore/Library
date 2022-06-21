@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Летняя_Практика_ООП_2_Курс"
         mc:Ignorable="d"
-        Title="Вход" Height="210" Width="400" WindowStartupLocation="CenterScreen">
+        Title="Вход" Height="210" Width="280" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" FontSize="14">
     <Grid>
-        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Margin="15,40,0,0" VerticalAlignment="Top" Width="200" Height="25" MaxLength="30" Cursor="IBeam"/>
-        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Margin="15,100,0,0" VerticalAlignment="Top" Width="200" Height="25" PasswordChar="*" MaxLength="20" Cursor="IBeam"/>
-        <TextBlock Text="Введите имя/идентификатор пользователя" HorizontalAlignment="Left" Margin="15,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-                   FontSize="14" FontWeight="Black" Width="370"/>
-        <TextBlock Text="Введите пароль" HorizontalAlignment="Left" Margin="15,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-            FontSize="14" FontWeight="Black" Width="370"/>
-        <Button Content="Войти" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Width="80" Margin="130,0,0,10" Cursor="Hand" Click="Button_Click"/>
-        <Button Content="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Width="110" Margin="0,0,100,10" Cursor="Hand" Click="Button_Click_1"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Логин" FontWeight="Black" Margin="5"/>
+            <TextBox x:Name="NameTextBox" Width="200" Height="25" MaxLength="30" Cursor="IBeam" Margin="5"/>
+            <TextBlock Text="Пароль" FontWeight="Black" Margin="5" />
+            <PasswordBox x:Name="PasswordTextBox" Width="200" Height="25" MaxLength="20" Cursor="IBeam" Margin="5"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Войти" Height="25" Width="80" Cursor="Hand" Click="Button_Click" Margin="5" IsDefault="True"/>
+                <Button Content="Регистрация" Height="25" Width="110" Cursor="Hand" Click="Button_Click_1" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
