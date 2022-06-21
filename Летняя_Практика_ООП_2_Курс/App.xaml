@@ -1,0 +1,9 @@
+﻿<Application x:Class="Летняя_Практика_ООП_2_Курс.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Летняя_Практика_ООП_2_Курс"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
