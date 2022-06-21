@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 
 namespace Летняя_Практика_ООП_2_Курс
 {
@@ -30,7 +31,7 @@ namespace Летняя_Практика_ООП_2_Курс
         {
             using (LibraryDB db = new LibraryDB())
             {
-                var reader = db.Readers.Where(x => x.Name == NameTextBox.Text && x.Password == PasswordTextBox.Password).FirstOrDefault();
+                var reader = db.Readers.Include(x=>x.familiarizedBooks).Include(x=>x.onHandsBooks).FirstOrDefault(x => x.Name == NameTextBox.Text && x.Password == PasswordTextBox.Password);
                 if (reader != null)
                 {
                     Close();

@@ -13,7 +13,8 @@
         </Grid.RowDefinitions>
         <Menu HorizontalAlignment="Right" Margin="0,3,0,0">
             <MenuItem x:Name="Identity" Header="Имя : идентификатор">
-                <MenuItem Header="Прочитанные книги"/>
+                <MenuItem Header="Прочитанные книги" Click="MenuItemReadBooks_Click"/>
+                <MenuItem Header="Текущие книги" Click="MenuItemCurrentBooks_Click"/>
                 <Separator/>
                 <MenuItem Header="Выход" Click="MenuItemExit_Click"/>
             </MenuItem>
@@ -34,7 +35,6 @@
                                         <ColumnDefinition Width="0.25*"/>
                                         <ColumnDefinition Width="0.25*"/>
                                         <ColumnDefinition Width="0.25*"/>
-                                        <ColumnDefinition Width="0.25*"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="Название" Grid.Column="0" Grid.Row="1" FontWeight="Black"/>
                                     <TextBlock Text="{Binding Name}" Margin="0,15,0,0" Grid.Column="0" Grid.Row="1"/>
@@ -50,7 +50,7 @@
                                     <TextBlock Text="{Binding yearPublishing}" Margin="0,15,0,0" Grid.Column="1" Grid.Row="0"/>
                                     <Button Content="Аннотация" Grid.Column="2" Grid.Row="0" Click="Button_Click" Tag="{Binding Annotation}"/>
                                     <Button Content="Ознакомиться" Grid.Column="2" Grid.Row="1" Click="Button_Click_1" Tag="{Binding BookID}"/>
-                                    <Button Content="Ознакомиться" Grid.Column="2" Grid.Row="1" Click="Button_Click_1" Tag="{Binding BookID}"/>
+                                    <Button Content="Похожие книги" Grid.Column="2" Grid.Row="2" Click="Button_Click_1" Tag="{Binding BookID}"/>
                                 </Grid>
                             </Border>
                         </StackPanel>
