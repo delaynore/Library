@@ -37,20 +37,20 @@
                                         <ColumnDefinition Width="0.25*"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="Название" Grid.Column="0" Grid.Row="1" FontWeight="Black"/>
-                                    <TextBlock Text="{Binding Name}" Margin="0,15,0,0" Grid.Column="0" Grid.Row="1"/>
+                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Margin="0,15,0,0" Grid.Column="0" Grid.Row="1"/>
                                     <TextBlock Text="Автор" Grid.Column="0" Grid.Row="0" FontWeight="Black"/>
-                                    <TextBlock Text="{Binding Author}" Margin="0,15,0,0" Grid.Column="0" Grid.Row="0"/>
+                                    <TextBlock Text="{Binding Author}" TextWrapping="Wrap" Margin="0,15,0,0" Grid.Column="0" Grid.Row="0"/>
                                     <TextBlock Text="Переводчик" Grid.Column="0" Grid.Row="2" FontWeight="Black"/>
-                                    <TextBlock Text="{Binding Interpreter}" Margin="0,15,0,0" Grid.Column="0" Grid.Row="2"/>
+                                    <TextBlock Text="{Binding Interpreter}" TextWrapping="Wrap" Margin="0,15,0,0" Grid.Column="0" Grid.Row="2"/>
                                     <TextBlock Text="Жанр" Grid.Column="1" Grid.Row="1" FontWeight="Black"/>
-                                    <TextBlock Text="{Binding Genre}" Margin="0,15,0,0" Grid.Column="1" Grid.Row="1"/>
+                                    <TextBlock Text="{Binding Genre}" TextWrapping="Wrap" Margin="0,15,0,0" Grid.Column="1" Grid.Row="1"/>
                                     <TextBlock Text="Кол. страниц" Grid.Column="1" Grid.Row="2" FontWeight="Black"/>
                                     <TextBlock Text="{Binding numberPages}" Margin="0,15,0,0" Grid.Column="1" Grid.Row="2"/>
                                     <TextBlock Text="Год издания" Grid.Column="1" Grid.Row="0" FontWeight="Black"/>
                                     <TextBlock Text="{Binding yearPublishing}" Margin="0,15,0,0" Grid.Column="1" Grid.Row="0"/>
                                     <Button Content="Аннотация" Grid.Column="2" Grid.Row="0" Click="Button_Click" Tag="{Binding Annotation}"/>
                                     <Button Content="Ознакомиться" Grid.Column="2" Grid.Row="1" Click="Button_Click_1" Tag="{Binding BookID}"/>
-                                    <Button Content="Похожие книги" Grid.Column="2" Grid.Row="2" Click="Button_Click_1" Tag="{Binding BookID}"/>
+                                    <Button Content="Похожие книги" Grid.Column="2" Grid.Row="2" Click="Button_Click_3" Tag="{Binding BookID}"/>
                                 </Grid>
                             </Border>
                         </StackPanel>
@@ -58,6 +58,6 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
-        <Button Content="Обновить список литературы" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="170" Click="Button_Click_2"/>
+        <Button Content="Открыть библу" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center" Width="170" Click="Button_Click_2"/>
     </Grid>
 </Window>

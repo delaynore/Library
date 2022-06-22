@@ -18,9 +18,9 @@ namespace Летняя_Практика_ООП_2_Курс
         public string Interpreter { get; set; }
         public int numberPages { get; set; }
         public int readingRoomNumber { get; set; }
-        public int rackNumber { get; set; } // стеллаж
         public int? CurrentReaderId { get; set; }
         public Reader CurrentReader { get; set; }
         public ICollection<Reader> PreviousReaders { get; set; }
-}
+        public List<KeyWord> KeyWords { get; set; }
+    }
 }

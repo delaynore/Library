@@ -31,9 +31,9 @@ namespace Летняя_Практика_ООП_2_Курс
                     try
                     {
                         db.Readers.Add(reader);
-                        MessageBox.Show("Пользователь успешно зарегестрирован.");
                         db.SaveChanges();
-                        this.Close();
+                        MessageBox.Show("Пользователь успешно зарегестрирован.");
+                        Close();
                     }
                     catch(Exception ex)
                     {
