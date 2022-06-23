@@ -50,7 +50,7 @@ namespace Летняя_Практика_ООП_2_Курс
             
             foreach (var e in books)
             {
-                if (IsSimilarBooks(book, e) || MaratAlgorithm(book, e))
+                if (IsSimilarBooks(book, e) || HaveSameKeywords(book, e))
                     alternate.Add(e);
             }
             return alternate;
@@ -64,7 +64,7 @@ namespace Летняя_Практика_ООП_2_Курс
         {
             return Database.Books.Include(x => x.KeyWords).FirstOrDefault(x => x.BookID == id);
         }
-        private static bool MaratAlgorithm(Book book1, Book book2)
+        private static bool HaveSameKeywords(Book book1, Book book2)
         {
             if (book1.KeyWords.Count > book2.KeyWords.Count) return false;
             for (int i = 0; i < book1.KeyWords.Count; i++)
