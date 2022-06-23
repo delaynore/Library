@@ -16,7 +16,7 @@ namespace Летняя_Практика_ООП_2_Курс
             var book = GetBookFromId(bookId);
             if (book == null) return null;
             if (book.KeyWords == null) return null;
-            var books = GetBooksWithSameGenre(book);
+            var books = GetBooksWithSameGenre(book, (w,z) => w.Author != z.Author);
             if (books == null) return null;
             var alternate = new List<Book>();
             foreach (var e in books)
@@ -44,7 +44,7 @@ namespace Летняя_Практика_ООП_2_Курс
             var book = GetBookFromId(bookId);
             if (book == null) return null;
             if (book.KeyWords == null) return null;
-            var books = GetBooksWithSameGenre(book);
+            var books = GetBooksWithSameGenre(book, (w,z) => true);
             if (books == null) return null;
             var alternate = new List<Book>();
             
@@ -56,9 +56,9 @@ namespace Летняя_Практика_ООП_2_Курс
             return alternate;
         }
 
-        private static List<Book> GetBooksWithSameGenre(Book book)
+        private static List<Book> GetBooksWithSameGenre(Book book, Func<Book, Book, bool> isSameAuthor)
         {
-            return Database.Books.Include(x => x.KeyWords).Where(x => x.Genre == book.Genre && x.Author != book.Author && !x.CurrentReaderId.HasValue).ToList();
+            return Database.Books.Include(x => x.KeyWords).Where(x => x.Genre == book.Genre && isSameAuthor(x,book) && !x.CurrentReaderId.HasValue).ToList();
         }
         private static Book? GetBookFromId(int id)
         {
